@@ -18,7 +18,7 @@ jobs:
 
       - name: Change directory
         run: |
-          cd backend/
+          cat ./backend/
           ls -la
 
       - name: Login to DockerHub
@@ -37,7 +37,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: backend
           file: backend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/community_puls:${{ steps.build-version.outputs.BUILD_VERSION }}
