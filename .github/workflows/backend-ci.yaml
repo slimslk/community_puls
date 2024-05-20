@@ -38,6 +38,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile
+          file: backend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/community_puls:${{ steps.build-version.outputs.BUILD_VERSION }}
