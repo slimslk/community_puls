@@ -16,11 +16,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Change directory
-        run: |
-          cat ./backend/
-          ls -la
-
       - name: Login to DockerHub
         uses: docker/login-action@v3
         with:
