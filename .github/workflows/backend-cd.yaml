@@ -16,5 +16,4 @@ jobs:
         working-directory: backend
     steps:
       - name: Send echo command
-        working-directory: /
-        run: echo "Hello"
+        run: pwd
