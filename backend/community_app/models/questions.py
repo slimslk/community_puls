@@ -1,4 +1,4 @@
-from datetime import datetime, UTC
+from datetime import datetime
 
 from community_app import db
 
@@ -8,7 +8,7 @@ class Question(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(255), nullable=False)
     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"), primary_key=True)
-    created_at = db.Column(db.DateTime, nullable=False, default=datetime.now(UTC))
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
     responses = db.relationship("Response", backref="question", lazy=True)
 
