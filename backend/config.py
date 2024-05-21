@@ -2,11 +2,11 @@ from os import getenv
 from dotenv import load_dotenv
 
 load_dotenv()
-DATABASE_USERNAME = getenv("DATABASE_USERNAME")
-DATABASE_PASSWORD = getenv("DATABASE_PASSWORD")
-DATABASE_HOST = getenv("DATABASE_HOST")
-DATABASE_PORT = getenv("DATABASE_PORT")
-DATABASE_NAME = getenv("DATABASE_NAME")
+DATABASE_USERNAME = getenv("DATABASE_USERNAME", "username")
+DATABASE_PASSWORD = getenv("DATABASE_PASSWORD", "password")
+DATABASE_HOST = getenv("DATABASE_HOST", "localhost")
+DATABASE_PORT = getenv("DATABASE_PORT", 3306)
+DATABASE_NAME = getenv("DATABASE_NAME", "db_name")
 
 
 class Config:
