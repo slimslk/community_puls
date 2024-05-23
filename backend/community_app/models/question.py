@@ -7,9 +7,10 @@ class Question(db.Model):
     __tablename__ = "questions"
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.String(255), nullable=False)
-    category_id = db.Column(db.Integer, db.ForeignKey("categories.id"), primary_key=True)
+    category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
 
+    category = db.relationship("Category")
     responses = db.relationship("Response", backref="question", lazy=True)
 
     def __str__(self):
