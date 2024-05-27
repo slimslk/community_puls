@@ -4,7 +4,7 @@ from community_app import db
 class Response(db.Model):
     __tablename__ = "responses"
     id = db.Column(db.Integer, primary_key=True)
-    question_id = db.Column(db.Integer, db.ForeignKey("questions.id"), nullable=False)
+    question_id = db.Column(db.Integer, db.ForeignKey("questions.id", ondelete="CASCADE"), nullable=False)
     is_agree = db.Column(db.Boolean, nullable=False)
 
     def __str__(self):
